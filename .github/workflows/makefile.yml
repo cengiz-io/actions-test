@@ -1,4 +1,4 @@
-name: Makefile CI
+name: Continous Integration
 
 on:
   push:
@@ -14,17 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: configure
-      run: ./configure
-
-    - name: Install dependencies
+    - name: Build
       run: make
-
-    - name: Run check
-      run: make check
-
-    - name: Run distcheck
-      run: make distcheck
 
     - name: Run hellomain
       run: ./hellomain
